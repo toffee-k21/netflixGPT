@@ -1,6 +1,8 @@
 import { useRef, useState } from "react";
 import Header from "./Header";
 import { validation } from "../utils/validation";
+import {auth} from "../utils/firebase"
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 
 function SignIn() {
   const email = useRef(null);
@@ -8,6 +10,7 @@ function SignIn() {
 
   const [isSignIn, setIsSignIn] = useState(true);
   const [valid,setValid] = useState(null)
+  // email.current.value, password.current.value) ye useRef k krn hi h
 
   const sign = () => {
     setIsSignIn(!isSignIn); //good way to add toggle
@@ -18,6 +21,19 @@ function SignIn() {
   const validate = validation(email.current.value, password.current.value)
   setValid(validate)
   console.log(validate)
+  // console.log(!validate)
+  if(validate != null ) return;
+
+  if(!isSignIn) { 
+  createUserWithEmailAndPassword(auth, email.current.value, password.current.value)
+  .then((u)=> console.log(u))
+  .catch((e)=>console.log(e))
+  }
+  if(isSignIn) {
+    signInWithEmailAndPassword(auth, email.current.value, password.current.value)
+    .then((u)=>console.log(u))
+    .catch((e)=>console.log(e))
+  }
   };
 
   return (
