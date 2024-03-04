@@ -6,6 +6,10 @@ export const options = {
       accept: 'application/json',
       Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyMDkyODI2MjU2ZDEyMjY5NDQ1YjE1NTA2N2FiMWIyYyIsInN1YiI6IjY1ZTQ1ODM3ZmUwNzdhMDE4NTEwZDU5NyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.PO6U7SC1HYNMETumM-9pqxEGXCs_8ZXTHTmkXByS8K4'
     }
+<<<<<<< HEAD
   };
 
 export const POSTER_IMG_URL = "https://image.tmdb.org/t/p/w300//"  
+=======
+  };
+>>>>>>> 5cf4619b133f3dbf84b2682c0e8c410972d01175

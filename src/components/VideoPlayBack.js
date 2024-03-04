@@ -28,10 +28,18 @@ setVidkey(mainVidDetails.key)
   return (
     <div className="">
       <iframe
+<<<<<<< HEAD
       className="w-full h-[800px] absolute -z-10 top-[-24%] "
         src={`https://www.youtube.com/embed/${vidkey}?autoplay=1&mute=1&autoplay=1&controls=0&showinfo=0&rel=0&modestbranding=1`}
         title="YouTube video player"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;"
+=======
+      className="w-full aspect-video absolute top-0 -z-10 "
+        src={`https://www.youtube.com/embed/${vidkey}?autoplay=1&mute=1`}
+        title="YouTube video player"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;"
+
+>>>>>>> 5cf4619b133f3dbf84b2682c0e8c410972d01175
       ></iframe>
     </div>
   );

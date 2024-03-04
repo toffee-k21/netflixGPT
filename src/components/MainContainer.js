@@ -9,7 +9,11 @@ function MainContainer() {
 
     if(movie == null) return;
 
+<<<<<<< HEAD
     const mainMovie = movie[6]
+=======
+    const mainMovie = movie[4]
+>>>>>>> 5cf4619b133f3dbf84b2682c0e8c410972d01175
 
     const {id,overview,title} = mainMovie
 

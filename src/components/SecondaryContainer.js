@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from "react";
 import CardContainer from "./CardContainer";
 import { useSelector } from "react-redux";
@@ -23,3 +24,14 @@ function SecondaryContainer() {
 }
 
 export default SecondaryContainer;
+=======
+import React from 'react'
+
+function SecondaryContainer() {
+  return (
+    <div>SecondaryContainer</div>
+  )
+}
+
+export default SecondaryContainer
+>>>>>>> 5cf4619b133f3dbf84b2682c0e8c410972d01175
