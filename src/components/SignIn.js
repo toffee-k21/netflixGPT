@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import Header from "./Header";
 import { validation } from "../utils/validation";
+<<<<<<< HEAD
 import { auth } from "../utils/firebase";
 import {
   createUserWithEmailAndPassword,
@@ -21,12 +22,25 @@ function SignIn() {
 
   const [isSignIn, setIsSignIn] = useState(true);
   const [valid, setValid] = useState(null);
+=======
+import {auth} from "../utils/firebase"
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+
+function SignIn() {
+  const email = useRef(null);
+  const password = useRef(null);
+
+  const [isSignIn, setIsSignIn] = useState(true);
+  const [valid,setValid] = useState(null)
+  // email.current.value, password.current.value) ye useRef k krn hi h
+>>>>>>> 5b9f855f108ddba5a026ad1839725dc9ca68909f
 
   const sign = () => {
     setIsSignIn(!isSignIn); //good way to add toggle
   };
 
   const clickHandle = () => {
+<<<<<<< HEAD
     const validate = validation(email.current.value, password.current.value);
     setValid(validate);
     console.log(validate);
@@ -61,6 +75,25 @@ function SignIn() {
         })
         .catch((e) => console.log(e));
     }
+=======
+    // console.log(email.current.value, password.current.value);
+  const validate = validation(email.current.value, password.current.value)
+  setValid(validate)
+  console.log(validate)
+  // console.log(!validate)
+  if(validate != null ) return;
+
+  if(!isSignIn) { 
+  createUserWithEmailAndPassword(auth, email.current.value, password.current.value)
+  .then((u)=> console.log(u))
+  .catch((e)=>console.log(e))
+  }
+  if(isSignIn) {
+    signInWithEmailAndPassword(auth, email.current.value, password.current.value)
+    .then((u)=>console.log(u))
+    .catch((e)=>console.log(e))
+  }
+>>>>>>> 5b9f855f108ddba5a026ad1839725dc9ca68909f
   };
 
   return (
@@ -76,7 +109,10 @@ function SignIn() {
           </div>
           {!isSignIn ? (
             <input
+<<<<<<< HEAD
               ref={name}
+=======
+>>>>>>> 5b9f855f108ddba5a026ad1839725dc9ca68909f
               className="p-2 m-2 bg-black border-[.2px] text-gray-200"
               type="text"
               placeholder="Enter your Name"
@@ -96,11 +132,22 @@ function SignIn() {
             type="password"
             placeholder="Enter your password"
           />
+<<<<<<< HEAD
           <div className="text-red-700 m-2">{valid}</div>
           <button className="bg-red-700 m-2 p-2" onClick={clickHandle}>
             {isSignIn ? "Sign In" : "Sign Up"}
           </button>
           <div className="text-white p-2 text-s cursor-pointer" onClick={sign}>
+=======
+           <div className="text-red-700 m-2">{valid}</div>
+          <button className="bg-red-700 m-2 p-2" onClick={clickHandle}>
+            {isSignIn ? "Sign In" : "Sign Up"}
+          </button>
+          <div
+            className="text-white p-2 text-s cursor-pointer"
+            onClick={sign}
+          >
+>>>>>>> 5b9f855f108ddba5a026ad1839725dc9ca68909f
             {isSignIn
               ? "Don't have an account ? click to sign Up"
               : "Already have an account ? click to sign In"}

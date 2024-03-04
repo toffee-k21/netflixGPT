@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useDispatch, useSelector } from "react-redux"
 import Header from "./Header"
 import { useEffect } from "react"
@@ -16,6 +17,13 @@ useFetchPopularMovieList()
       <Header />
       <MainContainer />
     </div>
+=======
+
+
+const Browse = () => {
+  return (
+    <div>Browse</div>
+>>>>>>> 5b9f855f108ddba5a026ad1839725dc9ca68909f
   )
 }
 

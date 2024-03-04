@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { addUser, removeUser } from '../utils/userSlice'
@@ -45,6 +46,14 @@ signOut(auth).then(()=>console.log('signOut hogya')).catch(()=>console.log('nhi 
          {  disName != 'user' && `user: ${disName}`}
         {  disName != 'user' && <button className='bg-red-700 p-1 rounded-md bg-opacity-50 m-2' onClick={remUser}>Sign Out</button>}
         </div>
+=======
+import React from 'react'
+
+function Header() {
+  return (
+    <div className='bg-gradient-to-b from-black'>
+        <img  className="w-40" src='https://cdn.cookielaw.org/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png' />
+>>>>>>> 5b9f855f108ddba5a026ad1839725dc9ca68909f
     </div>
   )
 }
