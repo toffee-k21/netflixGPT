@@ -5,6 +5,7 @@ import { onAuthStateChanged, signOut } from 'firebase/auth'
 import { auth } from '../utils/firebase'
 import { useNavigate } from 'react-router-dom'
 import { LOGO } from '../utils/constants'
+import { changeGPTSearchShow } from '../utils/GPTSlice'
 
 function Header() {
   
@@ -32,6 +33,9 @@ onAuthStateChanged(auth,(user)=>{
 })
 },[])
 
+const ToggleGPTSearch = () =>{
+dispatch(changeGPTSearchShow())
+}
 const remUser = () =>{
 dispatch(removeUser())
 signOut(auth).then(()=>console.log('signOut hogya')).catch(()=>console.log('nhi logged out hua'))
@@ -41,6 +45,11 @@ signOut(auth).then(()=>console.log('signOut hogya')).catch(()=>console.log('nhi 
   return (
     <div className='bg-gradient-to-b from-black flex text-white absolute top-0 justify-between px-10 w-full'>
         <img  className="w-40" src={LOGO} />
+      <button
+      className=''
+      onClick={ToggleGPTSearch}>
+Search
+      </button>
         <div>
          {  disName != 'user' && `user: ${disName}`}
         {  disName != 'user' && <button className='bg-red-700 p-1 rounded-md bg-opacity-50 m-2' onClick={remUser}>Sign Out</button>}
